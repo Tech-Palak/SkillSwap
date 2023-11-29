@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>javascript</title>
+    </head>
+    <body>
+      <p id="text">welcome all!</p>
+      <button id="change">change text</button>
+      <p id="second">javascript is......</p>
+      <button id="mybutton">Append text</button>
+      <p id="third"></p>
+      <button id="mybutton2">visible!</button>
+      <p id="fourth">webpage</p>
+      <button id="mybutton3">styling!</button>
+       <script type="text/javascript">
+     document.getElementById("change").onclick=function(){
+         document.getElementById("text").innerHTML="hello all!";
+     }
+     document.getElementById("mybutton").onclick=function(){
+        document.getElementById("second").innerHTML="I think "+document.getElementById("second").innerHTML+"awesome";
+     }
+     document.getElementById("mybutton2").onclick=function(){
+         document.getElementById("third").innerHTML="<h1>how are you?</h1>";
+     }
+     document.getElementById("mybutton3").onclick=function(){
+         document.getElementById("fourth").style.display="none";
+     }
+
+    </script>
+    </body>
+</html>

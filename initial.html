@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>
+            variables
+        </title>
+    </head>
+    <body>
+        <input type="text" id="input">
+        <button id="text">change text</button>
+        <p id="first">hi there!</p>
+        <script type="text/javascript">
+        var character="";
+       
+       
+        document.getElementById("text").onclick=function(){
+            character=document.getElementById("input").value;
+            document.getElementById("first").innerHTML=character;
+        }
+       
+        </script>    
+    </body>
+</html>
