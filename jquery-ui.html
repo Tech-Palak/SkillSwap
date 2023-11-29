@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <title>jquery-ui
+    </title>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        #b1 {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+
+        #also {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        #big {
+            width: 400px;
+            height: 400px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="draggable">please drag!</div>
+    <div id="box">
+        <p id="p1">please drag me!</p>
+    </div>
+    
+    <div id="also"></div>
+    <div id="b1"><span>please drag me!</span></div>
+    <div id="big"></div>
+    <div id="accordion">
+        <h3>fashion1</h3>
+        <div>Besides clothing, ornaments, accessories, and make up, it also includes our mannerism and behavior. The way we talk, the words that we use while talking, the voice tone, the clothing, the way we wear the clothes, etc. are all aspects of fashion.</div>
+        <h3>fashion2</h3>
+        <div>Fashion means something that is trendy or valued in a certain time period. The prevailing fashion/ trends/style is called ‘vogue’.</div>
+        <h3>fashion3</h3>
+        <div>Fashion can also simply mean our lifestyle: the clothing and accessories that we wear and the cosmetics that we apply.</div>
+        <h3>fashion4</h3>
+        <div>When it was first introduced into the English language, the word fashion means ‘to create’. We can still see shadows of this meaning in our present day use of the word fashion.</div>
+        <h3>fashion5</h3>
+        <div>We help to create an image of ourselves through our garments, accessories and other aspects of our lifestyle.</div>
+    </div>
+    <script type="text/javascript">
+        $("#draggable").draggable({ axis: "x" });
+        $("#p1").draggable({ containment: "parent" });
+        $("#box").resizable({
+            grid: 50,
+                alsoResize: "#also",
+                    resize: function(event, ui) {
+                        if ($("#box").width > "300px") {
+                            alert("Big enough");
+                        }
+                    }
+        });
+        $("#also").resizable();
+        $("#b1").draggable();
+        $("span").draggable();
+        $("#big").droppable({
+            drop:function(event,ui){
+            alert("dropped");
+            alert(event);
+            console.log(event);
+            }
+        });
+        $("#accordion").accordion();
+        $("#accordion").sortable();
+    </script>
+
+</body>
+
+</html>

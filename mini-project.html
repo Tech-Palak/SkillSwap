@@ -1,0 +1,161 @@
+<html>
+
+<head>
+    <title>login form</title>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style type="text/css">
+        #username {
+            float: left;
+            margin-left: 250px;
+            margin-top: 30px;
+            font-size: 25;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #input1 {
+            float: left;
+            margin-left: 230px;
+            margin-top: 15px;
+            font-size: 38;
+            border-radius: 10px;
+            border-width: 1px;
+        }
+
+        #phone {
+            clear: left;
+            position: relative;
+            left: 250px;
+            top: 50px;
+            font-size: 25;
+            font-family: 'Roboto', sans-serif;
+
+        }
+
+        #input2 {
+            float: left;
+            margin-left: 545px;
+            margin-top: 15px;
+            font-size: 38;
+            border-radius: 10px;
+            border-width: 1px;
+        }
+
+        #password {
+            clear: left;
+            position: relative;
+            left: 250px;
+            top: 50px;
+            font-size: 25;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #input3 {
+            float: left;
+            margin-left: 545px;
+            margin-top: 15px;
+            font-size: 38;
+            border-radius: 10px;
+            border-width: 1px;
+        }
+
+        #confirm {
+            clear: left;
+            position: relative;
+            left: 250px;
+            top: 50px;
+            font-size: 25;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #input4 {
+            float: left;
+            margin-left: 545px;
+            margin-top: 15px;
+            font-size: 38;
+            border-radius: 10px;
+            border-width: 1px;
+        }
+
+        #input5 {
+            position: relative;
+            top: 20px;
+            left: 550px;
+            font-size: 30;
+            border-radius: 10px;
+            border-width: 1px;
+        }
+
+        #d1 {
+            clear: left;
+
+        }
+        .c{
+            display:none;
+            text-align: center;
+            font-size: 30;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <p id="p1" class="c">welcome</p>
+    <p id="p2" class="c"></p>
+    <p id="p3" class="c"></p>
+    <p id="p4" class="c"></p>
+    <div id="username">Email</div>
+    <input id="input1" type="text/javascript" placeholder="eg:Yourname@gmail.com"></input>
+    <div id="phone">Telephone</div>
+    <input id="input2" type="numeric/javascript" placeholder="eg:0123456789"></input>
+    <div id="password">Password</div>
+    <input id="input3" type="password"></input>
+    <div id="confirm">confirm-Password</div>
+    <input id="input4" type="password"></input>
+    <div id="d1"></div> <button id="input5">Sign Up</button></div>
+    <script type="text/javascript">
+        $("#input5").click(function () {
+            var Regex = /@/;
+            var string = $("#input1").val();
+            var result = string.match(Regex);
+            if (result != "@") {
+                $("#p2").html("Your Email address id not valid");
+                $("#p2").css("color","red");
+                $("#p2").css("display","block");
+            }
+            var Regex = /.com/;
+            var string = $("#input1").val();
+            var result = string.match(Regex);
+            if (result!=".com") {
+                $("#p2").html("Your Email address id not valid");
+                $("#p2").css("color","red");
+                $("#p2").css("display","block");
+                $("#p1").html("not valid");
+            }
+            var num=$("#input2").val();
+            if(isNaN(num)){
+                $("#p3").html("Your phone number is not numeric");
+                $("#p3").css("color","red");
+                $("#p3").css("display","block");
+                $("#p1").html("not valid");
+            }
+            var Regex = $("#input3").val();
+            var string = $("#input4").val();
+            var result = string.match(Regex);
+            if (result!= $("#input4").val()) {
+                $("#p4").html("Your password don't match");
+                $("#p4").css("color","red");
+                $("#p4").css("display","block");
+                $("#p1").html("not valid");
+            }
+            if($("#p1").html()=="welcome"){
+                $("#p1").html("You've done it! Congratulations.");
+                $("#p1").css("color","green");
+                $("#p1").css("display","block");
+            }
+
+        });
+    </script>
+</body>
+
+</html>
